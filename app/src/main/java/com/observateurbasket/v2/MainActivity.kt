@@ -63,7 +63,7 @@ class MainActivity : Activity() {
     private val red = Color.rgb(198, 40, 40)
 
     private lateinit var root: LinearLayout
-    private lateinit var content: FrameLayout
+    private lateinit var content: LinearLayout
     private lateinit var title: TextView
 
     private var match: MatchData? = null
@@ -103,7 +103,9 @@ class MainActivity : Activity() {
         }
         header.addView(title, LinearLayout.LayoutParams(0, -2, 1f))
 
-        content = FrameLayout(this)
+        content = LinearLayout(this).apply {
+    orientation = LinearLayout.VERTICAL
+}
         root.addView(header)
         root.addView(content, LinearLayout.LayoutParams(-1, 0, 1f))
 
